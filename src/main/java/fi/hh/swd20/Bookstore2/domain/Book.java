@@ -18,7 +18,6 @@ public class Book {
 	
 	public Book() {
 		super();
-		this.id = 0;
 		this.title = null;
 		this.author = null;
 		this.year = 0;
@@ -26,9 +25,8 @@ public class Book {
 		this.price = 0;
 	}
 	
-	public Book(long id, String title, String author, int year, String isbn, double price) {
+	public Book(String title, String author, int year, String isbn, double price) {
 		super();
-		this.id = id;
 		this.title = title;
 		this.author = author;
 		this.year = year;
