@@ -34,21 +34,20 @@ public class BookController {
 		repository.save(book);
 		return "redirect:booklist";
 	}
-/*
+
 	//muokkaa kirjaa
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-	public String editBook(@PathVariable("id") Long BookId, Model model) {
-		model.addAttribute("book", BookId);
+	public String editBook(@PathVariable(value="id") Long BookId, Model model) {
+		model.addAttribute("book", repository.findById(BookId));
 		return "editBook";
 	}
-	//tallenna kirjan muokkaus
+	/*//tallenna kirjan muokkaus
 		@RequestMapping(value = "/save2", method = RequestMethod.POST)
 		public String save2(Book book) {
 			repository.save(book);
 			return "redirect:booklist";
-		}
+		} */
 
-*/
 	//poista kirja
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public String deleteBook(@PathVariable("id") Long BookId, Model model) {
