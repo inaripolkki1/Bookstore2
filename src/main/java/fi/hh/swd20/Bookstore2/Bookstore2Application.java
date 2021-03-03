@@ -32,9 +32,9 @@ public class Bookstore2Application {
 	 crepository.save(b2);
 	 crepository.save(b3);
 	 
-	 Book a1 = new Book("Home body", "Rupi Kaur", 2020, "9781471196720", 15.95);
-	 Book a2 = new Book("Setting free the bears", "John Irwing", 1997, "978-0345417985", 35.45);
-	 Book a3 = new Book("The lost spells", "Robert Macfarlane", 2020, "9780241444641", 27.95);
+	 Book a1 = new Book("Home body", "Rupi Kaur", 2020, "9781471196720", 15.95, b1);
+	 Book a2 = new Book("Setting free the bears", "John Irwing", 1997, "978-0345417985", 35.45, b3);
+	 Book a3 = new Book("The lost spells", "Robert Macfarlane", 2020, "9780241444641", 27.95, b2);
 	 
 	 brepository.save(a1);
 	 brepository.save(a2);
