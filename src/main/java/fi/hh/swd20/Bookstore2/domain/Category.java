@@ -14,7 +14,7 @@ public class Category {
 	
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
-	private long category_id;
+	private long id;
 	private String name;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
@@ -31,11 +31,11 @@ public class Category {
 	}
 
 	public long getId() {
-		return category_id;
+		return id;
 	}
 
 	public void setId(long id) {
-		this.category_id = id;
+		this.id = id;
 	}
 
 	public String getName() {
@@ -56,7 +56,7 @@ public class Category {
 
 	@Override
 	public String toString() {
-		return "Category [id=" + category_id + ", name=" + name + "]";
+		return "Category [id=" + id + ", name=" + name + "]";
 	}
 	
 	
