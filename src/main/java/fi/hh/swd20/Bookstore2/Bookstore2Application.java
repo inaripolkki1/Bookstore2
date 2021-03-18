@@ -11,6 +11,8 @@ import fi.hh.swd20.Bookstore2.domain.Book;
 import fi.hh.swd20.Bookstore2.domain.BookRepository;
 import fi.hh.swd20.Bookstore2.domain.Category;
 import fi.hh.swd20.Bookstore2.domain.CategoryRepository;
+import fi.hh.swd20.Bookstore2.domain.User;
+import fi.hh.swd20.Bookstore2.domain.UserRepository;
 
 @SpringBootApplication
 public class Bookstore2Application {
@@ -21,8 +23,14 @@ public class Bookstore2Application {
 	private static final Logger log = LoggerFactory.getLogger(Bookstore2Application.class);
 	
 	@Bean
-	public CommandLineRunner demo(CategoryRepository crepository, BookRepository brepository) {
+	public CommandLineRunner demo(CategoryRepository crepository, BookRepository brepository, UserRepository urepository) {
 	return (args) -> {
+		
+		// Create users: admin/admin user/user
+		User user1 = new User("user", "$2a$10$D6XoktdshEWeNzPgqBXobuvoWp9nhQzN8DnW/Kp064fUbSLEtxnQ2", "USER", "user@user.com");
+		User user2 = new User("admin","$2a$10$FLMjZo.xsWYbWIX/WKRcvumZ6ITgebKjpIqH5b7ro/OT8NijkLCca", "ADMIN", "admin@admin.com");
+		urepository.save(user1);
+		urepository.save(user2);
 
 	 Category b1 = new Category("Romance");
 	 Category b2 = new Category("Science fiction");
